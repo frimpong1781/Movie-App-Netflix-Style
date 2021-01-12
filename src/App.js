@@ -35,7 +35,6 @@ const App = () => {
         setMovies(responseJson.Search);
      }
     };
-  
 
     getMovieRequest(searchValue);
   }, [searchValue]);
