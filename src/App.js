@@ -8,7 +8,15 @@ import AddFavourite from './components/AddFavourite';
 import RemoveFavourite from './components/RemoveFavourite';
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([
+    {
+      "Title": "Ava",
+      "Year": "2020",
+      "imdbID": "tt8784956",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTMzMTg1MjgtOWNhYy00NmZmLWExOTctMjA2OTZhZDFkNDhhXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_SX300.jpg"
+  },
+  ]);
   const [favourite, setFavourite] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
