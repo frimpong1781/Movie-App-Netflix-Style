@@ -50,7 +50,7 @@ const App = () => {
 
   useEffect(() => {
       const movieFavourite = JSON.parse(localStorage.getItem('react-movie-app-favourite')
-      );
+      ) || [];
       setFavourite(movieFavourite);
   }, []);
 
