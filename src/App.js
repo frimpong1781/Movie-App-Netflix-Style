@@ -12,20 +12,34 @@ const App = () => {
   const [favourite, setFavourite] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-  const getMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8ac642f3`
+  // const getMovieRequest = async () => {
+  //   const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8ac642f3`
 
-    const response = await fetch(url);
-    const responseJson = await response.json();
+  //   const response = await fetch(url);
+  //   const responseJson = await response.json();
 
-   if (responseJson.Search) {
-      setMovies(responseJson.Search);
-   }
-  };
+  //  if (responseJson.Search) {
+  //     setMovies(responseJson.Search);
+  //  }
+  // };
 
   useEffect(() => {
+
+    const getMovieRequest = async () => {
+      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=8ac642f3`
+  
+      const response = await fetch(url);
+      const responseJson = await response.json();
+  
+     if (responseJson.Search) {
+        setMovies(responseJson.Search);
+     }
+    };
+  
+
     getMovieRequest(searchValue);
   }, [searchValue]);
+
 
   useEffect(() => {
       const movieFavourite = JSON.parse(localStorage.getItem('react-movie-app-favourite')
